@@ -1,0 +1,19 @@
+scheduling:
+  time: "2024-11-21T10:30:00Z"
+  location: westus3
+
+resourceGroup:
+  name: my-resource-group
+  tags:
+    environment: dev
+
+virtualMachine:
+  name: my-virtual-machine
+  hardwareProfile:
+    vmSize: Standard_A1_v2
+  storageProfile:
+    imageReference:
+      publisher: Canonical
+      offer: 0001-com-ubuntu-server-jammy
+      sku: 22_04-lts
+      version: latest
