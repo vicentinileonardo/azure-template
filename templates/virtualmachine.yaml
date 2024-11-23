@@ -8,6 +8,8 @@ metadata:
 spec:
   hardwareProfile: {{ .Values.virtualMachine.hardwareProfile | toYaml | nindent 4 }}
   location: {{ .Values.scheduling.location }}
+  networkProfile: {{ .Values.virtualMachine.networkProfile | toYaml | nindent 4 }}
+  osProfile: {{ .Values.virtualMachine.osProfile | toYaml | nindent 4 }}
   owner:
     name: {{ .Values.resourceGroup.name }}
   storageProfile: {{ .Values.virtualMachine.storageProfile | toYaml | nindent 4 }}

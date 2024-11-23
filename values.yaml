@@ -1,16 +1,53 @@
 scheduling:
-  time: "2024-11-21T10:30:00Z"
-  location: westus3
+  time: "2024-11-23T10:30:00Z"
+  location: italynorth
+
+provisioningTimeOffset: 300
 
 resourceGroup:
-  name: my-resource-group
+  name: unitn
+  azureName: UNITN
   tags:
     environment: dev
 
+virtualNetwork:
+  name: samplevnet
+  addressSpace:
+    addressPrefixes:
+      - 10.0.0.0/16
+
+virtualNetworkSubnet:
+  name: samplesubnet
+  addressPrefixes: 10.0.0.0/24
+
+
+networkInterface:
+  name: samplenic
+  ipConfigurations:
+    - name: ipconfig1
+      privateIPAllocationMethod: Dynamic
+      subnet:
+        reference:
+          group: network.azure.com
+          kind: VirtualNetworksSubnet
+          name: samplesubnet
+
 virtualMachine:
-  name: my-virtual-machine
+  name: my-virtual-machine-greenops
   hardwareProfile:
     vmSize: Standard_A1_v2
+  networkProfile:
+    networkInterfaces:
+    - reference:
+        group: network.azure.com
+        kind: NetworkInterface
+        name: samplenic
+  osProfile:
+    adminPassword:
+      key: password
+      name: aso-sample-vmsecret
+    adminUsername: adminUser
+    computerName: poppy
   storageProfile:
     imageReference:
       publisher: Canonical

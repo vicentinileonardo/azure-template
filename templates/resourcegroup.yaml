@@ -6,5 +6,6 @@ kind: ResourceGroup
 metadata:
   name: {{ .Values.resourceGroup.name }}
 spec:
+  azureName: {{ .Values.resourceGroup.azureName }}
   location: {{ .Values.scheduling.location }}
 {{ end }}
