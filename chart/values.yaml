@@ -4,12 +4,6 @@ scheduling:
 
 provisioningTimeOffset: 300
 
-resourceGroup:
-  name: unitn
-  azureName: UNITN
-  tags:
-    environment: dev
-
 virtualNetwork:
   name: samplevnet
   addressSpace:
