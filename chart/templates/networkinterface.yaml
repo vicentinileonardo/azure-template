@@ -8,6 +8,6 @@ metadata:
 spec:
   location: {{ .Values.scheduling.location }}
   owner:
-    name: {{ .Values.resourceGroup.name }}
+    armId: {{ .Values.resourceGroup.armId }}
   ipConfigurations: {{ .Values.networkInterface.ipConfigurations | toYaml | nindent 4 }}
 {{ end }}

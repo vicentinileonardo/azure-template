@@ -1,8 +1,11 @@
 scheduling:
-  time: "2024-11-23T10:30:00Z"
+  time: "2024-11-29T10:30:00Z"
   location: italynorth
 
 provisioningTimeOffset: 300
+
+resourceGroup:
+  armId: ""
 
 virtualNetwork:
   name: samplevnet
@@ -13,7 +16,6 @@ virtualNetwork:
 virtualNetworkSubnet:
   name: samplesubnet
   addressPrefixes: 10.0.0.0/24
-
 
 networkInterface:
   name: samplenic
@@ -29,7 +31,7 @@ networkInterface:
 virtualMachine:
   name: my-virtual-machine-greenops
   hardwareProfile:
-    vmSize: Standard_A1_v2
+    vmSize: Standard_DS1_v2
   networkProfile:
     networkInterfaces:
     - reference:
@@ -39,8 +41,8 @@ virtualMachine:
   osProfile:
     adminPassword:
       key: password
-      name: aso-sample-vmsecret
-    adminUsername: adminUser
+      name: greenops-vm-secret
+    adminUsername: adminuser
     computerName: poppy
   storageProfile:
     imageReference:
