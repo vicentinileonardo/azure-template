@@ -1,5 +1,5 @@
 scheduling:
-  time: "2024-11-29T10:30:00Z"
+  time: "2024-11-25T10:30:00Z"
   location: italynorth
 
 provisioningTimeOffset: 300
@@ -12,10 +12,6 @@ virtualNetwork:
   addressSpace:
     addressPrefixes:
       - 10.0.0.0/16
-
-virtualNetworkSubnet:
-  name: samplesubnet
-  addressPrefixes: 10.0.0.0/24
 
 networkInterface:
   name: samplenic

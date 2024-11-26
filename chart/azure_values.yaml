@@ -1,0 +1,4 @@
+# File used to test importing values from a another file
+virtualNetworkSubnet:
+  name: samplesubnet
+  addressPrefixes: 10.0.0.0/24
